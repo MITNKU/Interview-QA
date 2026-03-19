@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interview-project-qa-skill"
+version = "0.2.0"
+description = "Transcribe interview audio, separate two speakers, extract project-related Q&A, generate deep-dive answers, and publish to Notion."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "OpenAI ChatGPT scaffold"}]
+dependencies = [
+  "typer>=0.12.3",
+  "rich>=13.7.1",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0.1",
+  "python-dotenv>=1.0.1",
+  "faster-whisper>=1.0.3",
+  "openai>=1.66.0",
+  "pyannote.audio>=4.0.1",
+  "soundfile>=0.12.1",
+  "librosa>=0.10.2.post1",
+  "numpy>=1.26.4",
+  "tqdm>=4.66.4",
+  "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "ruff>=0.6.1",
+  "mypy>=1.10.0",
+]
+
+[project.scripts]
+interview-project-qa = "interview_project_qa.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
