@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview Project QA"
+  short_description: "Analyze interview audio into project Q&A markdown."
+  default_prompt: "Use $interview-project-qa to analyze an interview recording and export project-focused Q&A."
